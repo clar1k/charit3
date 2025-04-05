@@ -9,6 +9,7 @@ import { CharityJarCard } from "@/components/charity-jar-card";
 import { Globe, Heart, Lock } from "lucide-react";
 import { Link as LinkIcon } from "lucide-react";
 import { useEffect } from "react";
+import { useFundraisesQuery } from "@/hooks/use-pools-query";
 
 export default function Home() {
   useEffect(() => {
@@ -17,7 +18,11 @@ export default function Home() {
     };
     ready();
   }, []);
+  const fundraisesQuery = useFundraisesQuery();
 
+  useEffect(() => {
+    console.log(fundraisesQuery.data);
+  }, [fundraisesQuery]);
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
