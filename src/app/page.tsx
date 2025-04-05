@@ -1,4 +1,6 @@
 "use client";
+import { sdk } from "@farcaster/frame-sdk";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,9 +8,16 @@ import { ConnectWallet } from "@/components/connect-wallet";
 import { CharityJarCard } from "@/components/charity-jar-card";
 import { Globe, Heart, Lock } from "lucide-react";
 import { Link as LinkIcon } from "lucide-react";
-
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const ready = async () => {
+      await sdk.actions.ready();
+    };
+    ready();
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
