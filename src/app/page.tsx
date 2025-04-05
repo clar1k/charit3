@@ -6,6 +6,8 @@ import { ConnectWallet } from "@/components/connect-wallet";
 import { CharityJarCard } from "@/components/charity-jar-card";
 import { Globe, Heart, Lock } from "lucide-react";
 import { Link as LinkIcon } from "lucide-react";
+
+
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
@@ -19,7 +21,7 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <ConnectWallet />
           <Button asChild>
-            <Link href="/create">Create Charity Jar</Link>
+            {/* <Link href="/create">Create Charity Jar</Link> */}
           </Button>
         </div>
       </header>
@@ -39,7 +41,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="secondary" size="lg" asChild>
-                    <Link href="/explore">Explore Causes</Link>
+                    {/* <Link href="/explore">Explore Causes</Link> */}
                   </Button>
                   <Button
                     variant="outline"
@@ -47,7 +49,7 @@ export default function Home() {
                     size="lg"
                     asChild
                   >
-                    <Link href="/about">Our Mission</Link>
+                    {/* <Link href="/about">Our Mission</Link> */}
                   </Button>
                 </div>
               </div>
