@@ -33,6 +33,7 @@ export function Providers(props: { children: ReactNode }) {
             accentColor: "#676FFF",
             logo: "https://your-logo-url",
           },
+          loginMethods: ["wallet"],
           embeddedWallets: { createOnLogin: "users-without-wallets" },
         }}
       >
