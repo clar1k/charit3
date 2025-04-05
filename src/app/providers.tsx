@@ -3,6 +3,12 @@
 import { type ReactNode } from "react";
 import { base } from "wagmi/chains";
 import { MiniKitProvider } from "@coinbase/onchainkit/minikit";
+import { PrivyProvider } from "@privy-io/react-auth";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WagmiProvider } from "@privy-io/wagmi";
+import { config } from "@/wagmiConfig";
+
+const queryClient = new QueryClient();
 
 export function Providers(props: { children: ReactNode }) {
   return (
@@ -18,7 +24,22 @@ export function Providers(props: { children: ReactNode }) {
         },
       }}
     >
-      {props.children}
+      <PrivyProvider
+        appId="cm94560es01a0l40lwld9hwk3"
+        clientId="client-WY5iiuirnBZ1E28su9TSm58DqyNf3z9YtLaVXPNj7mjM7"
+        config={{
+          appearance: {
+            theme: "light",
+            accentColor: "#676FFF",
+            logo: "https://your-logo-url",
+          },
+          embeddedWallets: { createOnLogin: "users-without-wallets" },
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          <WagmiProvider config={config}>{props.children}</WagmiProvider>
+        </QueryClientProvider>
+      </PrivyProvider>
     </MiniKitProvider>
   );
 }

@@ -21,17 +21,14 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">CryptoCharity</h1>
+        <div className="flex flex-col gap-1 items-center justify-center">
+          <h1 className="text-3xl font-bold tracking-tight">Charit3</h1>
           <p className="text-muted-foreground">
             Transparent charitable giving on the blockchain
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-grow  w-full md:w-auto">
           <ConnectWallet />
-          <Button asChild>
-            {/* <Link href="/create">Create Charity Jar</Link> */}
-          </Button>
         </div>
       </header>
 
