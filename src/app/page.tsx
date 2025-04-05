@@ -86,7 +86,7 @@ export default function Home() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">Featured Charity Jars</h2>
           <Button variant="outline" asChild>
-            <Link href="/explore">View All</Link>
+            {/* <Link href="/explore">View All</Link> */}
           </Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
